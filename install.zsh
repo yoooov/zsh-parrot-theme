@@ -19,6 +19,8 @@ else
 fi
 
 sed -i -e 's/ZSH_THEME=".*"/ZSH_THEME="'$theme_name'"/' ${HOME}/.zshrc
+echo 'psvar[8]=$(ifconfig en0 | grep "inet " | cut -d " " -f 2)' >> ${HOME}/.zshrc
+echo 'psvar[9]=$(curl -s http://ip-api.com/csv | cut -d , -f 14)' >> ${HOME}/.zshrc
 
 if grep -Fxq 'ZSH_THEME="'$theme_name'"' ${HOME}/.zshrc ; then 
     echo "Theme set on .zshrc"
