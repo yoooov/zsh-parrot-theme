@@ -22,7 +22,9 @@ sed -i -e 's/ZSH_THEME=".*"/ZSH_THEME="'$theme_name'"/' ${HOME}/.zshrc
 
 # MAC OS X LOCAL IPV4 / change your interface name accordingly
 echo 'psvar[8]=$(ifconfig en0 | grep "inet " | cut -d " " -f 2)' >> ${HOME}/.zshrc
+
 # LINUX OS LOCAL IPV4 / change your interface name accordingly
+# echo 'psvar[8]=$(ifconfig eth0 | grep "inet " | awk -F" " "{print $2}")' >> ${HOME}/.zshrc
 # echo 'psvar[8]=$(ip -o -4  address show  | awk \' NR==2 { gsub(/\/.*/, "", $4); print $4 } \')'  >> ${HOME}/.zshrc
 
 # EXTERNAL IPV4
